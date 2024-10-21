@@ -26,7 +26,7 @@ text_analytics_client = TextAnalyticsClient(
 @app.blob_trigger(
     arg_name="myblob", path="unprocessed-text/{name}",
     connection="AzureWebJobsStorage",
-    source=BlobSource.EVENT_GRID
+    source="EventGrid"
     )
 @app.blob_output(
     arg_name="outputblob", path="processed-text/{name}-output.txt",
